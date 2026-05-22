@@ -14,10 +14,3 @@ body::after {
   );
 }
 
-:root[saved-theme="dark"] body::after {
-  background: radial-gradient(
-    ellipse 120% 80% at 50% 50%,
-    transparent 48%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
-}
