@@ -383,15 +383,46 @@ pre {
 }
 
 // ─────────────────────────────────────────────
-// POPOVERS
+// POPOVERS: borde de papel quemado
 // ─────────────────────────────────────────────
+// Técnica: clip-path irregular en .popover (fondo quemado oscuro) +
+// .popover-inner con color papel encima. El gap de 0.6rem entre ambos
+// muestra el fondo oscuro como "borde". drop-shadow sigue la forma.
 
 .popover {
-  .popover-inner {
-    background-color: var(--light);
-    border: 1px solid var(--lightgray);
-    box-shadow: 3px 4px 12px rgba(60, 40, 20, 0.2);
-    border-radius: 2px;
+  padding: 0.6rem;
+  background: linear-gradient(
+    160deg,
+    #2A1A0E 0%,
+    #5C4A2E 35%,
+    #3D2817 65%,
+    #2A1A0E 100%
+  );
+  clip-path: polygon(
+    0.5% 2%,   2%    0%,    5%    1.5%,  9%    0.5%,  14%   1.5%,
+    19%  0%,   25%   2%,    31%   0.5%,  37%   1.5%,  44%   0%,
+    50%  2%,   57%   0.5%,  63%   1.5%,  70%   0%,    76%   2%,
+    82%  0.5%, 88%   1.5%,  93%   0%,    97%   1.5%,  100%  1%,
+    99%  6%,   100%  13%,   98.5% 21%,   100%  30%,   99%   39%,
+    100% 48%,  99%   57%,   100%  66%,   98.5% 75%,   100%  84%,
+    99%  93%,  100%  99%,
+    97%  100%, 91%   98.5%, 85%   100%,  78%   99%,   71%   100%,
+    64%  98.5%,57%   100%,  50%   99%,   43%   100%,  36%   98.5%,
+    29%  100%, 22%   99%,   15%   100%,  8%    98.5%,  2%   100%,
+    0%   99%,
+    1%   92%,  0%    83%,   1.5%  74%,   0%    65%,   1%    56%,
+    0%   47%,  1.5%  38%,   0%    29%,   1%    20%,   0%    11%
+  );
+  filter: drop-shadow(3px 5px 18px rgba(10, 5, 2, 0.6));
+
+  & > .popover-inner {
+    background-color: #F5EFE3;
+    background-image: $grain;
+    background-blend-mode: multiply;
+    background-size: 400px 400px;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: inset 0 0 16px rgba(92, 74, 46, 0.1) !important;
   }
 }
 
