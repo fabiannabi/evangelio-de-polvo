@@ -337,16 +337,11 @@ button.desktop-explorer h2 {
 }
 
 // ─────────────────────────────────────────────
-// FOOTER
+// FOOTER: oculto
 // ─────────────────────────────────────────────
 
 footer {
-  border-top: 1px solid var(--lightgray);
-  font-family: var(--codeFont);
-  font-size: 0.78rem;
-  color: var(--gray);
-  letter-spacing: 0.04em;
-  padding-top: 1rem;
+  display: none;
 }
 
 // ─────────────────────────────────────────────
