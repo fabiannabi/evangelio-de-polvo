@@ -159,7 +159,8 @@ hr {
   background-color: #F5EFE3;
   background-image: none;
   box-sizing: border-box;
-  min-width: 0; // evita desborde en grid
+  min-width: 0;
+  padding: 0 1.5rem;
 }
 
 // A 1200px el grid queda muy ajustado con 320+auto+320.
