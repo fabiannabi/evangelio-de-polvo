@@ -1,3 +1,448 @@
 @use "./base.scss";
+@use "./_theme-polvo.scss" as *;
+@use "./_papel.scss";
 
-// put your custom CSS here!
+// ─────────────────────────────────────────────
+// BASE: fondo y tipografía
+// ─────────────────────────────────────────────
+
+$grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+
+html, body {
+  background-color: var(--light);
+  background-image: $grain;
+  background-blend-mode: multiply;
+  background-size: 400px 400px;
+}
+
+body {
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+// Peso normal para fuentes que no tienen 700 (IM Fell English, EB Garamond)
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--dark);
+}
+
+h1 {
+  font-size: 2rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+// Drop cap en primer párrafo del artículo
+article > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--headerFont);
+  font-size: 3.6em;
+  line-height: 0.75;
+  margin: 0.08em 0.08em 0 0;
+  color: var(--dark);
+  font-style: italic;
+}
+
+// Selección de texto
+::selection {
+  background: rgba(139, 44, 15, 0.25);
+  color: var(--dark);
+}
+
+// ─────────────────────────────────────────────
+// LINKS
+// ─────────────────────────────────────────────
+
+a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: rgba(139, 44, 15, 0.3);
+  text-underline-offset: 3px;
+  transition: $trans-color;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--tertiary);
+    text-decoration-color: var(--tertiary);
+  }
+
+  &.internal {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+
+    &.broken {
+      color: var(--gray);
+      text-decoration-style: dashed;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// BLOCKQUOTE
+// ─────────────────────────────────────────────
+
+blockquote {
+  border-left: 4px solid var(--secondary);
+  background-color: rgba(139, 44, 15, 0.05);
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+
+  p { color: var(--darkgray); }
+}
+
+:root[saved-theme="dark"] blockquote {
+  background-color: rgba(196, 74, 31, 0.08);
+}
+
+// ─────────────────────────────────────────────
+// HR: divisor decorativo
+// ─────────────────────────────────────────────
+
+hr {
+  border: none;
+  text-align: center;
+  overflow: visible;
+  height: 1.2em;
+  margin: 2.5rem auto;
+
+  &::after {
+    content: '✦  ✦  ✦';
+    display: inline-block;
+    position: relative;
+    top: -0.75em;
+    padding: 0 1rem;
+    background-color: var(--light);
+    color: var(--gray);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+  }
+}
+
+// ─────────────────────────────────────────────
+// HEADER / TÍTULO DEL SITIO
+// ─────────────────────────────────────────────
+
+.page-title {
+  font-family: var(--headerFont);
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--dark);
+  border-bottom: 2px solid var(--lightgray);
+  padding-bottom: 0.4rem;
+
+  a {
+    color: var(--dark);
+    text-decoration: none;
+    &:hover { color: var(--secondary); }
+  }
+}
+
+// ─────────────────────────────────────────────
+// SIDEBAR IZQUIERDO
+// ─────────────────────────────────────────────
+
+.sidebar.left {
+  border-right: 1px solid var(--lightgray);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  background-size: 400px 400px;
+}
+
+// Cabecera del explorer como sello
+.explorer > button h2,
+button.desktop-explorer h2 {
+  font-family: var(--headerFont);
+  font-style: italic;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+// Links del explorer
+.explorer-content ul li > a {
+  font-family: var(--bodyFont);
+  font-size: 0.92rem;
+  color: var(--darkgray);
+  text-decoration: none;
+  transition: $trans-color;
+
+  &:hover, &.active {
+    color: var(--secondary);
+  }
+}
+
+.folder-container div > a,
+.folder-container div > button span {
+  font-family: var(--bodyFont);
+  font-style: italic;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--darkgray);
+
+  &:hover { color: var(--secondary); }
+}
+
+.explorer-content .folder-outer > ul {
+  border-left: 1px dashed var(--lightgray);
+}
+
+// ─────────────────────────────────────────────
+// SIDEBAR DERECHO
+// ─────────────────────────────────────────────
+
+.sidebar.right {
+  border-left: 1px solid var(--lightgray);
+}
+
+// ─────────────────────────────────────────────
+// BACKLINKS: estilo de sello de archivo
+// ─────────────────────────────────────────────
+
+.backlinks {
+  h3 {
+    font-family: var(--headerFont);
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border-bottom: 1px solid var(--lightgray);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+
+    &::before {
+      content: '⌘ ';
+      opacity: 0.5;
+    }
+  }
+
+  ul li a {
+    font-size: 0.88rem;
+    color: var(--darkgray);
+
+    &:hover { color: var(--secondary); }
+  }
+}
+
+// ─────────────────────────────────────────────
+// TABLA DE CONTENIDOS
+// ─────────────────────────────────────────────
+
+.toc {
+  li a {
+    font-size: 0.88rem;
+    color: var(--darkgray);
+    font-style: italic;
+
+    &:hover { color: var(--secondary); }
+  }
+
+  li.depth-1 > a {
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+// ─────────────────────────────────────────────
+// BÚSQUEDA
+// ─────────────────────────────────────────────
+
+.search > .search-button {
+  border-color: var(--lightgray);
+  background-color: rgba(232, 220, 196, 0.4);
+  border-radius: 2px;
+  font-style: italic;
+  color: var(--gray);
+
+  &:hover {
+    border-color: var(--gray);
+  }
+}
+
+:root[saved-theme="dark"] .search > .search-button {
+  background-color: rgba(26, 20, 16, 0.6);
+}
+
+.search-container {
+  backdrop-filter: blur(3px) sepia(20%);
+}
+
+.search-space > * {
+  background-color: var(--light) !important;
+  border-radius: 2px !important;
+  box-shadow:
+    0 8px 40px rgba(60, 40, 20, 0.3),
+    0 2px 8px rgba(60, 40, 20, 0.2) !important;
+}
+
+.search-space > input {
+  border-color: var(--lightgray) !important;
+  font-style: italic;
+}
+
+.result-card {
+  border-bottom-color: var(--lightgray) !important;
+
+  &:hover, &:focus, &.focus {
+    background: var(--highlight) !important;
+  }
+}
+
+// ─────────────────────────────────────────────
+// MODO OSCURO: botón
+// ─────────────────────────────────────────────
+
+.darkmode svg {
+  fill: var(--gray);
+}
+
+// ─────────────────────────────────────────────
+// GRAPH VIEW
+// ─────────────────────────────────────────────
+
+.graph {
+  h3 {
+    font-family: var(--headerFont);
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+}
+
+// Los colores de los nodos del grafo se controlan via JS/SVG attrs,
+// pero podemos hacer override del contenedor
+.graph-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 2px;
+  background-color: var(--light);
+}
+
+// ─────────────────────────────────────────────
+// CONTENT META (fecha, tiempo de lectura)
+// ─────────────────────────────────────────────
+
+.content-meta {
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--gray);
+  font-style: normal;
+  border-top: 1px dashed var(--lightgray);
+  border-bottom: 1px dashed var(--lightgray);
+  padding: 0.4rem 0;
+  margin-bottom: 1.5rem;
+
+  span::before { content: '— '; opacity: 0.5; }
+  span:first-child::before { content: ''; }
+}
+
+// ─────────────────────────────────────────────
+// FOOTER
+// ─────────────────────────────────────────────
+
+footer {
+  border-top: 1px solid var(--lightgray);
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  padding-top: 1rem;
+}
+
+// ─────────────────────────────────────────────
+// TABLAS
+// ─────────────────────────────────────────────
+
+th {
+  border-bottom-color: var(--secondary);
+  font-family: var(--headerFont);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+tr {
+  border-bottom-color: var(--lightgray);
+}
+
+// ─────────────────────────────────────────────
+// CODE BLOCKS
+// ─────────────────────────────────────────────
+
+code {
+  background-color: rgba(140, 100, 60, 0.1);
+  color: var(--secondary);
+  border-radius: 2px;
+}
+
+pre {
+  border-color: var(--lightgray);
+  border-radius: 2px;
+}
+
+// ─────────────────────────────────────────────
+// POPOVERS
+// ─────────────────────────────────────────────
+
+.popover {
+  .popover-inner {
+    background-color: var(--light);
+    border: 1px solid var(--lightgray);
+    box-shadow: 3px 4px 12px rgba(60, 40, 20, 0.2);
+    border-radius: 2px;
+  }
+}
+
+// ─────────────────────────────────────────────
+// BREADCRUMBS
+// ─────────────────────────────────────────────
+
+.breadcrumb-container {
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--gray);
+}
+
+// ─────────────────────────────────────────────
+// BARRA DE PROGRESO DE NAVEGACIÓN
+// ─────────────────────────────────────────────
+
+.navigation-progress {
+  background: var(--secondary);
+  height: 2px;
+}
+
+// ─────────────────────────────────────────────
+// SCROLLBAR
+// ─────────────────────────────────────────────
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lightgray);
+  border-radius: 0;
+
+  &:hover {
+    background: var(--gray);
+  }
+}

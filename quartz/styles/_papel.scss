@@ -1,0 +1,23 @@
+@use "./_theme-polvo.scss" as *;
+
+// Viñeta de bordes quemados (se aplica al cargar este archivo)
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 120% 80% at 50% 50%,
+    transparent 55%,
+    rgba(28, 18, 8, 0.3) 100%
+  );
+}
+
+:root[saved-theme="dark"] body::after {
+  background: radial-gradient(
+    ellipse 120% 80% at 50% 50%,
+    transparent 48%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
