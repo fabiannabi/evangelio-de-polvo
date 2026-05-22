@@ -383,68 +383,14 @@ pre {
 }
 
 // ─────────────────────────────────────────────
-// POPOVERS: borde de papel quemado
+// POPOVERS
 // ─────────────────────────────────────────────
-// Polígono de onda sinusoidal (78 pts, transiciones graduales) →
-// bordes ondulados sin picos. Gradiente con ceniza grisácea.
-// border-radius asimétrico en .popover-inner → sin esquina cuadrada.
 
-.popover {
-  padding: 0.7rem;
-  background:
-    radial-gradient(
-      ellipse 85% 85% at 50% 50%,
-      transparent 50%,
-      rgba(110, 90, 70, 0.5) 72%,
-      rgba(55, 40, 25, 0.88) 87%,
-      #150B05 100%
-    ),
-    linear-gradient(
-      125deg,
-      #3D3028 0%,
-      #6B5848 25%,
-      #4A3830 55%,
-      #2A1A0E 80%,
-      #180E07 100%
-    );
-  // Aproximación sinusoidal: 5 ciclos top/bottom, 3 ciclos left/right
-  // Amplitud 4% top/bottom, 1.5% left/right — ondas suaves sin picos
-  clip-path: polygon(
-    // Top (izq → der)
-    0%    2%,    4%    3.7%,  8%    4%,    12%   3.7%,  16%   2%,
-    20%   0.3%,  24%   0%,    28%   0.3%,  32%   2%,    36%   3.7%,
-    40%   4%,    44%   3.7%,  48%   2%,    52%   0.3%,  56%   0%,
-    60%   0.3%,  64%   2%,    68%   3.7%,  72%   4%,    76%   3.7%,
-    80%   2%,    84%   0.3%,  88%   0%,    92%   0.3%,  96%   2%,
-    100%  2%,
-    // Derecha (arr → abj)
-    100%  10%,  100%   17%,  100%  24%,  99.2% 31%,  98.5% 37%,
-    99%   43%,  100%   50%,  100%  57%,  100%  63%,  99.2% 70%,
-    98.5% 76%,  99%    83%,  100%  90%,  100%  98%,
-    // Bottom (der → izq)
-    96%   98%,   92%  99.7%, 88%  100%,  84%  99.7%, 80%   98%,
-    76%  96.3%,  72%  96%,   68%  96.3%, 64%   98%,  60%  99.7%,
-    56%  100%,   52%  99.7%, 48%   98%,  44%  96.3%, 40%  96%,
-    36%  96.3%,  32%   98%,  28%  99.7%, 24%  100%,  20%  99.7%,
-    16%   98%,   12%  96.3%,  8%   96%,   4%  96.3%,  0%   98%,
-    // Izquierda (abj → arr)
-    0%   90%,   0.1%  83%,   0%   77%,   0.3% 70%,   1%   63%,
-    1.5% 57%,   1.3%  50%,   0.5% 43%,   0%   37%,   0.1% 30%,
-    0.8% 23%,   1.5%  17%,   1.3% 10%
-  );
-  filter: drop-shadow(3px 5px 20px rgba(8, 4, 1, 0.65));
-
-  & > .popover-inner {
-    background-color: #F5EFE3;
-    background-image: $grain;
-    background-blend-mode: multiply;
-    background-size: 400px 400px;
-    border: none !important;
-    border-radius: 3px 7px 4px 6px !important; // esquinas suaves y asimétricas
-    box-shadow:
-      inset 0 0 22px rgba(60, 35, 15, 0.13),
-      inset 0 0 4px  rgba(20, 10,  5, 0.07) !important;
-  }
+.popover > .popover-inner {
+  background-color: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 3px;
+  box-shadow: 4px 5px 20px rgba(60, 40, 20, 0.25);
 }
 
 // ─────────────────────────────────────────────
