@@ -159,9 +159,15 @@ hr {
   background-color: #F5EFE3;
   background-image: none;
   box-sizing: border-box;
-  box-shadow:
-    -2px 0 16px rgba(92, 74, 46, 0.1),
-     2px 0 16px rgba(92, 74, 46, 0.1);
+  min-width: 0; // evita desborde en grid
+}
+
+// A 1200px el grid queda muy ajustado con 320+auto+320.
+// Reducimos los sidebars a 260px para dar más espacio al contenido.
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    grid-template-columns: 260px auto 260px;
+  }
 }
 
 // Cabecera del explorer como sello
