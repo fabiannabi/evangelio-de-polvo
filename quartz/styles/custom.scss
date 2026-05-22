@@ -158,10 +158,10 @@ hr {
 .center {
   background-color: #F5EFE3;
   background-image: none;
+  box-sizing: border-box;
   box-shadow:
-    -2px 0 12px rgba(92, 74, 46, 0.08),
-     2px 0 12px rgba(92, 74, 46, 0.08);
-  padding: 0 2rem;
+    -2px 0 16px rgba(92, 74, 46, 0.1),
+     2px 0 16px rgba(92, 74, 46, 0.1);
 }
 
 // Cabecera del explorer como sello

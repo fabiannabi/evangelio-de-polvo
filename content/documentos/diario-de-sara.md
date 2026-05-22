@@ -1,4 +1,4 @@
----
+﻿---
 title: Diario de Sara Vance
 tipo: documento
 tipo-documento: diario
@@ -17,8 +17,6 @@ tags: [documento-original, sara]
 ---
 
 # Diario de Sara Vance
-
-> **STUB**: Cuaderno escolar, tapas marrones, encontrado bajo una tabla suelta del piso de la casa Vance en [[lugares/reverencia|Reverencia]].
 
 Faltan páginas. Las que quedan están escritas con letra infantil que se va haciendo más temblorosa hacia el final.
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Reverencia
 tipo: lugar
 aliases: []
@@ -18,8 +18,6 @@ tags: [pueblo, sagrado, prohibido]
 ---
 
 # Reverencia
-
-> **STUB**: Pueblo fundado en 1812 sobre un cráter perfecto que los colonos creyeron formación natural. La iglesia está exactamente en el centro geométrico.
 
 Durante [[eventos/eclipse-de-1870|el eclipse de 1870]], todos sus habitantes desaparecieron en una sola noche. Las casas quedaron intactas. Sobre el campanario, un símbolo: una espiral con siete puntas.
 

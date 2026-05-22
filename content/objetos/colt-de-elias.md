@@ -1,4 +1,4 @@
----
+﻿---
 title: El Colt de Elías
 tipo: objeto
 aliases: [El Sexto Mandamiento]
@@ -15,8 +15,6 @@ tags: [arma, plata-grabada]
 ---
 
 # El Colt de Elías
-
-> **STUB**: Revólver Colt Single Action Army con seis balas de plata. Cada bala está grabada con un nombre.
 
 [[personajes/elias-vance|Elías]] no dice de quién son los nombres. Pero las balas están numeradas del uno al seis, y solo le quedan dos sin usar.
 

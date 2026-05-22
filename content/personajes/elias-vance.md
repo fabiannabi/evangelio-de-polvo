@@ -1,4 +1,4 @@
----
+﻿---
 title: Elías Vance
 tipo: personaje
 aliases: [El Predicador, El Portador]
@@ -18,8 +18,6 @@ tags: [protagonista, vasija]
 ---
 
 # Elías Vance
-
-> **STUB**: Elías Vance es un predicador itinerante que llega a [[lugares/calavera-springs|Calavera Springs]] en octubre de 1881. Dice cargar una Biblia con páginas arrancadas y un [[objetos/colt-de-elias|Colt grabado con seis nombres]].
 
 Su pasado lo conecta con [[lugares/reverencia|Reverencia]], el pueblo que desapareció durante [[eventos/eclipse-de-1870|el eclipse de 1870]]. Fue uno de los habitantes originales.
 

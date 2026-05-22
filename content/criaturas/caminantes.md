@@ -1,4 +1,4 @@
----
+﻿---
 title: Los Caminantes
 tipo: criatura
 aliases: [Emisarios, Los Que Sonríen]
@@ -15,8 +15,6 @@ tags: [no-humano, peligro-extremo]
 ---
 
 # Los Caminantes
-
-> **STUB**: Entidades que toman forma humana imperfecta. Algo siempre falla: la sombra cae mal, parpadean al revés, su reflejo tarda medio segundo.
 
 Son emisarios de [[conceptos/los-durmientes|Los Durmientes]]. Los habitantes "regresados" de [[lugares/reverencia|Reverencia]] son Caminantes vestidos con piel humana.
 

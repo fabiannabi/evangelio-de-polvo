@@ -1,4 +1,4 @@
----
+﻿---
 title: Calavera Springs
 tipo: lugar
 aliases: []
@@ -17,8 +17,6 @@ tags: [pueblo, base-de-operaciones]
 ---
 
 # Calavera Springs
-
-> **STUB**: Pueblo próspero gracias a las minas de plata cercanas. Sheriff: [[personajes/octavio-reyes|Octavio Reyes]]. Base de operaciones de la historia.
 
 Aquí llega [[personajes/elias-vance|Elías Vance]] una mañana de octubre de 1881, montando un caballo cuyos ojos son demasiado oscuros.
 

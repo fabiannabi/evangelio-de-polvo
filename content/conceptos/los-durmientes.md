@@ -1,4 +1,4 @@
----
+﻿---
 title: Los Durmientes
 tipo: concepto
 aliases: [Los Que Estaban Antes, Los Enterrados]
@@ -13,8 +13,6 @@ tags: [cosmologia, prohibido]
 ---
 
 # Los Durmientes
-
-> **STUB**: Entidades enterradas, no muertas. Cada una tiene un dominio: la sed, el eco, el espejo, el hambre que no se sacia.
 
 No son malignos en sentido cristiano. Son indiferentes, como una avalancha tiene "intención" de caer.
 

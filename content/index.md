@@ -1,4 +1,4 @@
----
+﻿---
 title: El Evangelio de Polvo
 tipo: concepto
 descubre: []
@@ -21,4 +21,3 @@ Hasta que, una mañana de octubre de 1881, alguien volvió a encender las luces 
 
 Este archivo es la portada del wiki. Desde aquí el lector puede explorar [[personajes/elias-vance|personajes]], [[lugares/reverencia|lugares]], y [[eventos/eclipse-de-1870|eventos]] del territorio.
 
-> **STUB**: el autor reescribirá este index como entrada narrativa.

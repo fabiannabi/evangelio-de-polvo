@@ -1,4 +1,4 @@
----
+﻿---
 title: La Hermandad del Hierro Frío
 tipo: faccion
 aliases: [Los Forjadores]
@@ -16,8 +16,6 @@ tags: [aliados, mestizos]
 ---
 
 # La Hermandad del Hierro Frío
-
-> **STUB**: Sociedad secreta de herreros mexicanos y apaches. Forjan armas con metal de meteoritos, el llamado "hierro frío" porque nunca se calienta al sol.
 
 Son los únicos que pueden herir a [[criaturas/caminantes|los Caminantes]]. Pequeños, pobres, perseguidos.
 

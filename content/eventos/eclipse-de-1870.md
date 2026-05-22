@@ -1,4 +1,4 @@
----
+﻿---
 title: El Eclipse de 1870
 tipo: evento
 aliases: [La Noche del Símbolo]
@@ -17,8 +17,6 @@ tags: [desaparicion, ritual]
 ---
 
 # El Eclipse de 1870
-
-> **STUB**: La noche del 14 de octubre de 1870, un eclipse total cubrió el cielo sobre [[lugares/reverencia|Reverencia]] durante varias horas más de lo que la astronomía permite.
 
 Cuando los Rangers llegaron al amanecer, los habitantes habían desaparecido. La comida seguía caliente. Las puertas estaban cerradas por dentro.
 
